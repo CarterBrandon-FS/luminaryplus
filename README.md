@@ -1,16 +1,202 @@
-# React + Vite
+# 💻 Project & Portfolio II
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Project Name: WDP2 Portfolio Project
 
-Currently, two official plugins are available:
+### Brandon Carter
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+🆔 &nbsp; 0005454448
 
-## React Compiler
+📪 &nbsp; brcarter1@student.fullsail.edu
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+![Degree Program](https://img.shields.io/badge/Degree-Web%20Development-orange?logo=gnometerminal)
+<br>
+![Project Portfolio II](https://img.shields.io/badge/Class-Project%20and%20Portfolio%20II-orange?logo=react)
 
-## Expanding the ESLint configuration
+<br>
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📢 &nbsp; Milestone Check-Ins
+
+Each week I will summarize my milestone activity and progress by writing a stand-up. A stand-up is meant to be a succinct update on how things are going.  
+Use the prompts below as a guide on what to write about.  
+For each Milestone #2-4, you should use all 4 icons.
+
+⚙️ Overview - What I worked on this past week
+<br>
+🌵 Challenges - What problems did I have & how I'm addressing them
+<br>
+🏆 Accomplishments - What is something I "leveled up" on this week
+<br>
+🔮 Next Steps - What I plan to prioritize and do next
+
+<br>
+
+### Milestone 1
+
+For this milestone you will have created a wireframe prototype in Figma.  
+Post your link here, so you have easy access to it.
+
+- Figma Link
+  https://www.figma.com/design/diGInsdzVOasKvMg56HUXI/MOVIE-APP?node-id=1-4&t=A0f4qeHPEVp2rrce-1
+
+<br>
+
+### Milestone 2
+
+⚙️ Overview - Overview - This week, I set up the foundational React application for Luminary+ using Vite. I implemented React Router to handle navigation between the Dashboard and the Movie Details page. I also integrated the TMDB API using Axios to fetch live movie data, replacing placeholder content with real movie posters, titles, and backdrops.
+<br>
+🌵 Challenges - One of the main challenges was dealing with the TMDB API structure, specifically figuring out how to fetch related data like movie collections (trilogies) without making too many API calls. I solved this by hardcoding specific collection IDs and fetching them efficiently using Promise.all. Another challenge was getting the CSS styling for the "Trilogies" stacked cards to work correctly, which required careful use of absolute positioning and z-index.
+<br>
+🏆 Accomplishments - I successfully built a functioning, dynamic Dashboard that looks visually close to my Figma prototype. I leveled up my skills in handling asynchronous data with Axios, managing complex state (handling multiple API calls for different rows), and creating advanced CSS hover effects (the expanding hero posters and stacked trilogy cards)
+<br>
+🔮 Next Steps - For the next milestone, I plan to complete the Search functionality so users can search the TMDB database. I will also implement the Details page to show cast, trailers, and related movies. Finally, I need to add Local Storage to save a user's "Watchlist" so the data persists between sessions. I also want everythng to work as it should like a live website..
+
+<br>
+
+Please discuss the following:
+
+#### Page #1
+
+- Name: Dashboard(Landing/Home)
+- Purpose: The main landing page where users can browse movies grouped by categories like Trending, Top 10, Action, and Trilogies. It also features a dynamic hero banner with a scrolling movie poster carousel.
+
+#### Page #2
+
+- Name: Movie Details(In Progress)
+- Purpose: Displays comprehensive information about a selected movie, including a backdrop image, poster, release year, rating, overview, cast list, and video trailers. It also shows a row of suggested similar movies.
+
+#### Page #3
+
+- Name: Search(In Progress)
+- Purpose: Will allow users to search for specific movies by title using a text input. The results will display in a grid format similar to the dashboard rows.
+
+#### Page #4
+
+- Name: User / Setting (in Progress)
+- Purpose: Will display the user's saved "Watchlist" and allow them to manage their account preferences and app settings.
+
+#### Remember that creating a project board, issues, and milestones is 50% of your grade!
+
+If you are having trouble, contact your instructor ASAP, you might need to be part of the ePortoflio group to have better access.
+
+<br>
+
+### Milestone 3
+
+⚙️ Overview - Write overview here.
+<br>
+🌵 Challenges - Write challenges here.
+<br>
+🏆 Accomplishments - Write Accomplishments here.
+<br>
+🔮 Next Steps - Write your next steps here.
+
+<br>
+
+Please discuss the following:
+
+#### API
+
+- Link to the API that is used in your code
+- Reason you chose the API
+- Where in your code did you use it?
+
+#### 1st Library
+
+- Link to the library
+- Link to library tutorial that you made already.
+- Reason you chose this library.
+- Where in your code is it used?
+
+#### 2nd Library
+
+- Link to the library
+- Reason you chose this library.
+- Where in your code is it used?
+
+#### Persistent Data
+
+- Discuss if you have used MongoDB or Local Storage.
+- How was it used in your code?
+- Where in your code is it used?
+
+<br>
+
+### Milestone 4
+
+⚙️ Overview - Write overview here.
+<br>
+🌵 Challenges - Write challenges here.
+<br>
+🏆 Accomplishments - Write Accomplishments here.
+<br>
+🔮 Next Steps - Write your next steps here.
+
+<br>
+
+Please discuss the following:
+
+#### Changes
+
+- Discuss any changes or updates that you have made to your site since Milestone #3.
+
+#### Styling
+
+- Discuss the process you used to style your page.
+
+#### Link To Overview Video
+
+- Once it is created, put the link to your overview video of your site here.
+
+<br>
+<br>
+<hr/>
+
+# Project Overview
+
+### Your project will use the MERN Tech Stack and must include the following:
+
+- A Git Repo, with a master, dev, and milestone branches
+- Readme File that explains your project and tracks your milestones
+- A React Front End
+- React Routing with _at least_ 4 different views/pages
+  - Dashboard/Main
+  - User/Settings
+  - Search
+  - Detail Page
+- Node/Express Backend
+- A Mongo DB Element OR Local Storage for persistent data
+- Connect to at least 1 free API
+- The project must use at least 2 different libraries, not including React itself
+  - One of these libraries you will create a tutorial for in Exercise 01
+- It should look visually appealing and must be easy for the end-user to use and understand. You may use Tailwind or any other front-end library/framework.
+
+**Milestone #1 (Due: Monday of Week 2)**
+
+- Decide on your topic and theme for your project.
+  - Check out the Free API sites for some ideas of an API that you can utilize
+    - [Apipheny](https://apipheny.io/free-api/)
+    - [Mixed Analytics](https://mixedanalytics.com/blog/list-actually-free-open-no-auth-needed-apis/)
+    - [I Am Sajan](https://iamsajan.com/free-api-without-an-api-key/)
+- Functional Spec that explains the scope of the work and the deadlines that must be met.
+- Create a Wireframe Prototype in Figma that will help non-tech people understand your idea.
+  - Keep in mind that a lot of your bosses will need only high-level concepts and will not be concerned with the actual code. The code is your job.
+
+**Milestone #2 **(Due: Monday of Week 3)\*\*\*\*
+
+- Create your Git Repo using the provided link, which will clone over a blank repo.
+- Start to code your project.
+  - I will not give you a step-by-step guide for this.
+  - At this point, you must use your skills and build it out yourself.
+- Along the way, if you get stuck, you may reach out to the lab assistants, but remember this is YOUR portfolio project, and troubleshooting your own code is a part of this process.
+- By Milestone #2, I am going to be checking that you have a React app that can compile without error and that you have your navigation up and running.
+
+**Milestone #3 **(Due: Monday of Week 4)\*\*\*\*
+
+- By this point, you should have a functional prototype of your project. It might not look pretty yet, but that is what the final week is for.
+- Your Git Repo should have a number of significant commits pushed to it.
+
+**Milestone #4 **(Due: Sunday of Week 4)\*\*\*\*
+
+- Your completed project will be due.
+- You must create a (3 to 10) minute long video that goes through your project, what you did this month, and the technologies that you used to get it working.
+  - Remember it is your job to sell your work and really show it off.
