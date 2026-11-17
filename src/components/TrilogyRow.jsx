@@ -1,9 +1,21 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 function TrilogyRow({ title, collections = [], loading = false }) {
   // State to track which trilogy stack is currently expanded (clicked)
   const [expandedId, setExpandedId] = useState(null);
+  //   scroll to use
+  const scrollRef = useRef(null);
+
+  function scrollRow(amount) {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: amount,
+        behavior: "smooth",
+      });
+    }
+  }
 
   return (
     <div className="movie-row">

@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import MovieCard from "./MovieCard";
 
-function MovieRow({ title, movies }) {
+function MovieRow({ title, movies, limit }) {
   const scrollRef = useRef(null);
 
   if (!movies || movies.length === 0) return null;
@@ -31,7 +31,7 @@ function MovieRow({ title, movies }) {
         </button>
 
         <div className="row-content" ref={scrollRef}>
-          {movies.map((movie) => (
+          {movies.slice(0, limit || movies.length).map((movie) => (
             <MovieCard key={movie.id} movie={movie} />
           ))}
         </div>

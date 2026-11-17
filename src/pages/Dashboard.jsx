@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import {
   getTrending,
   getTopRated,
-  getPopular,
+  getActionMovies,
+  getNewReleases,
   getUpcoming,
-  getTvShows,
+  getAdultTvShows,
   getCollectionDetails,
-  getKidsMovies, // <-- Added
-  getKidsTv, // <-- Added
-} from "../utils/TMDB"; // Make sure the path matches your file name (TMDB.js or tmdb.js)
+  getKidsTv,
+} from "../utils/TMDB";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -29,28 +29,29 @@ const TRILOGY_IDS = [
 function Dashboard() {
   const [trending, setTrending] = useState([]);
   const [topRated, setTopRated] = useState([]);
-  const [popular, setPopular] = useState([]);
+  const [actionMovies, setActionMovies] = useState([]);
+  const [newReleases, setNewReleases] = useState([]);
   const [upcoming, setUpcoming] = useState([]);
-  const [tvShows, setTvShows] = useState([]);
-
-  // Added Kids State
-  const [kidsMovies, setKidsMovies] = useState([]);
+  const [adultTvShows, setAdultTvShows] = useState([]);
   const [kidsTv, setKidsTv] = useState([]);
-
   const [trilogies, setTrilogies] = useState([]);
   const [trilogiesLoading, setTrilogiesLoading] = useState(true);
+  const [apiError, setApiError] = useState(false);
 
   useEffect(() => {
-    // Fetch standard rows
-    getTrending().then((res) => setTrending(res.data.results));
-    getTopRated().then((res) => setTopRated(res.data.results));
-    getPopular().then((res) => setPopular(res.data.results));
-    getUpcoming().then((res) => setUpcoming(res.data.results));
-    getTvShows().then((res) => setTvShows(res.data.results));
+    // Fetch each row. A failed request won't prevent the other rows from loading.
+    const loadRow = (request, saveResults) =>
+      request
+        .then((res) => saveResults(res.data.results || []))
+        .catch(() => setApiError(true));
 
-    // Fetch Kids rows
-    getKidsMovies().then((res) => setKidsMovies(res.data.results));
-    getKidsTv().then((res) => setKidsTv(res.data.results));
+    loadRow(getTrending(), setTrending);
+    loadRow(getTopRated(), setTopRated);
+    loadRow(getActionMovies(), setActionMovies);
+    loadRow(getNewReleases(), setNewReleases);
+    loadRow(getUpcoming(), setUpcoming);
+    loadRow(getAdultTvShows(), setAdultTvShows);
+    loadRow(getKidsTv(), setKidsTv);
 
     // Fetch Trilogies
     Promise.all(TRILOGY_IDS.map((id) => getCollectionDetails(id)))
@@ -74,9 +75,13 @@ function Dashboard() {
       {trending.length > 0 && <HeroBanner movies={trending} />}
 
       <div className="dashboard-content">
-        <MovieRow title="Trending" movies={trending} />
-        <MovieRow title="Top 10" movies={topRated} />
-        <MovieRow title="Action" movies={popular} />
+        {apiError && (
+          <p className="api-message">
+            Some movies could not load. Check that VITE_TMDB_TOKEN is set in your .env file.
+          </p>
+        )}
+        <MovieRow title="Top 10 Movies" movies={topRated} limit={10} />
+        <MovieRow title="Action Movies" movies={actionMovies} limit={15} />
         <TrilogyRow
           title="Trilogies"
           collections={trilogies}
@@ -104,10 +109,10 @@ function Dashboard() {
           </div>
         )}
         {/* Bottom Rows */}
-        <MovieRow title="Upcoming Movies" movies={upcoming} />
-        <MovieRow title="TV Shows" movies={tvShows} />
-        <MovieRow title="Kids Movies" movies={kidsMovies} />
-        <MovieRow title="Kids Series" movies={kidsTv} />
+        <MovieRow title="New Releases" movies={newReleases} limit={15} />
+        <MovieRow title="Upcoming Movies" movies={upcoming} limit={15} />
+        <MovieRow title="Top 10 Adult TV Series" movies={adultTvShows} limit={10} />
+        <MovieRow title="Kids TV Series" movies={kidsTv} limit={15} />
       </div>
 
       <Footer />
