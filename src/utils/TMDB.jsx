@@ -34,6 +34,10 @@ export const getCollectionDetails = (id) => tmdb.get(`/collection/${id}`);
 export const getMovieCredits = (id) => tmdb.get(`/movie/${id}/credits`);
 export const getMovieVideos = (id) => tmdb.get(`/movie/${id}/videos`);
 export const getSimilarMovies = (id) => tmdb.get(`/movie/${id}/similar`);
+export const getMovieImages = (id) =>
+  tmdb.get(`/movie/${id}/images`, {
+    params: { include_image_language: "en,null" },
+  });
 
 // Kids and family
 export const getKidsMovies = () =>
