@@ -10,6 +10,7 @@ const tmdb = axios.create({
   },
 });
 
+//
 // Standard rows
 export const getTrending = () => tmdb.get("/trending/movie/week");
 export const getTopRated = (page = 1) =>
@@ -26,17 +27,6 @@ export const getTvShows = () => tmdb.get("/tv/popular");
 export const getAdultTvShows = () =>
   tmdb.get("/discover/tv", {
     params: { without_genres: 10762, sort_by: "popularity.desc" },
-  });
-
-// Details and collections
-export const getMovieDetails = (id) => tmdb.get(`/movie/${id}`);
-export const getCollectionDetails = (id) => tmdb.get(`/collection/${id}`);
-export const getMovieCredits = (id) => tmdb.get(`/movie/${id}/credits`);
-export const getMovieVideos = (id) => tmdb.get(`/movie/${id}/videos`);
-export const getSimilarMovies = (id) => tmdb.get(`/movie/${id}/similar`);
-export const getMovieImages = (id) =>
-  tmdb.get(`/movie/${id}/images`, {
-    params: { include_image_language: "en,null" },
   });
 
 // Kids and family
@@ -56,6 +46,28 @@ export const getKidsTv = () =>
       sort_by: "popularity.desc",
       page: 1,
     },
+  });
+
+// Search page results
+export const getMovieSearch = (query, page = 1) =>
+  tmdb.get("/search/movie", {
+    params: { page },
+  });
+
+export const getMovieRecommendations = (id, page = 1) =>
+  tmdb.get(`/movie/${id}/recommendations`, {
+    params: { page },
+  });
+
+// Details and collections
+export const getMovieDetails = (id) => tmdb.get(`/movie/${id}`);
+export const getCollectionDetails = (id) => tmdb.get(`/collection/${id}`);
+export const getMovieCredits = (id) => tmdb.get(`/movie/${id}/credits`);
+export const getMovieVideos = (id) => tmdb.get(`/movie/${id}/videos`);
+export const getSimilarMovies = (id) => tmdb.get(`/movie/${id}/similar`);
+export const getMovieImages = (id) =>
+  tmdb.get(`/movie/${id}/images`, {
+    params: { include_image_language: "en,null" },
   });
 
 export default tmdb;

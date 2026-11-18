@@ -633,3 +633,13 @@ body {
   width: 100%;
   display: block;
 }
+
+.search-area .search-submit {
+  appearance: none;
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  color: #fff;
+  cursor: pointer;
+}

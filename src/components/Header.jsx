@@ -36,8 +36,7 @@ function Header() {
 
   function handleSearch(event) {
     event.preventDefault();
-    const params = new URLSearchParams(location.search);
-    params.set("query", searchText);
+    const query = searchText.trim();
 
     if (query) {
       navigate(`/search?query=${encodedURLComponent(query)}`);
@@ -82,7 +81,9 @@ function Header() {
       </div>
 
       <form className="search-area" onSubmit={handleSearch} role="search">
-        <FaSearch className="search-icon" aria-hidden="true" />
+        <button type="submit" className="search-submit" aria-label="Search">
+          <FaSearch className="search-icon" aria-hidden="true" />
+        </button>
 
         <input
           type="search"
