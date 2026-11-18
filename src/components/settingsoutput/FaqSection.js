@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaChevronDown, faChevronRight } from "react-icons/fa";
+import { FaChevronDown, FaChevronRight } from "react-icons/fa";
 
 // Each answer appears after the question is clicked
 

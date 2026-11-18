@@ -1,0 +1,40 @@
+/* Settings page base styles */
+.settings-page {
+  width: calc(100% - 96px);
+  max-width: 1536px;
+  margin: 0 auto;
+  padding: 72px 0 48px;
+  color: #fff;
+}
+
+.settings-intro {
+  display: flex;
+  min-height: 185px;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 48px;
+  padding: 28px 38px;
+  border: 1px solid #193f45;
+  border-radius: 12px;
+  background: linear-gradient(115deg, #111a1c, #071012 70%, #0d2428);
+}
+
+.settings-intro-mark {
+  display: grid;
+  width: 76px;
+  height: 76px;
+  flex: 0 0 76px;
+  place-items: center;
+  border: 1px solid #20c8df;
+  border-radius: 50%;
+  color: #20c8df;
+  font-size: 30px;
+}
+
+.settings-eyebrow {
+  margin: 0 0 8px;
+  color: #20c8df;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}

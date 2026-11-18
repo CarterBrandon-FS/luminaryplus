@@ -1,5 +1,5 @@
 import { FaLock, FaTv, FaUser } from "react-icons/fa";
-import SettingsRow from "./SettingsRow";
+import SettingsRow from "../components/settingsoutput/SettingsRow";
 
 function AccountPanel() {
   return (
