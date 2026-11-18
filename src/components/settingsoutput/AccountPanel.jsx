@@ -1,16 +1,21 @@
 import { FaLock, FaTv, FaUser } from "react-icons/fa";
-import SettingsRow from "../components/settingsoutput/SettingsRow";
+import SettingsRow from "./SettingsRow";
 
 function AccountPanel() {
   return (
     <section className="settings-panel settings-account-panel">
       <h2>Account</h2>
-      <SettingsRow icon={<FaUser />} label="Name" value="Add your name" />
-      <SettingsRow icon={<FaUser />} label="Email" value="Add your email" />
+      <SettingsRow icon={<FaUser />} label="Name" value="Jacob Sanders" />
+
+      <SettingsRow
+        icon={<FaUser />}
+        label="Email"
+        value="jsanders9293@email.com"
+      />
       <SettingsRow
         icon={<FaLock />}
         label="Phone number"
-        value="Add a phone number"
+        value="1+(769)236-2545"
       />
 
       <h2 className="settings-subheading">Membership</h2>

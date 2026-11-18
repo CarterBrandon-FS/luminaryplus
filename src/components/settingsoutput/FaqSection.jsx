@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { FaChevronDown, FaChevronRight } from "react-icons/fa";
 
-// Each answer appears after the question is clicked
-
 const faqItems = [
   {
     question: "What is Luminary+?",
@@ -50,33 +48,29 @@ function FaqSection() {
   const [openQuestion, setOpenQuestion] = useState(null);
 
   return (
-    <>
-      <section className="settings-panel settings-faq">
-        <h2>Frequently Asked Questions</h2>
-        <div className="settings-faq-grid">
-          {faqItems.map((item, index) => (
-            <div className="settings-faq-item" key={item.question}>
-              <button
-                type="button"
-                aria-expanded={openQuestion === index}
-                onClick={() =>
-                  setOpenQuestion(openQuestion === index ? null : index)
-                }
-              >
-                <span>{item.question}</span>
-                {openQuestion === index ? (
-                  <FaChevronDown />
-                ) : (
-                  <FaChevronRight />
-                )}
-              </button>
-              {openQuestion === index && <p>{item.answer}</p>}
-            </div>
-          ))}
-        </div>
-      </section>
-    </>
+    <section className="settings-panel settings-faq">
+      <h2>Frequently Asked Questions</h2>
+
+      <div className="settings-faq-grid">
+        {faqItems.map((item, index) => (
+          <div className="settings-faq-item" key={item.question}>
+            <button
+              type="button"
+              aria-expanded={openQuestion === index}
+              onClick={() =>
+                setOpenQuestion(openQuestion === index ? null : index)
+              }
+            >
+              <span>{item.question}</span>
+              {openQuestion === index ? <FaChevronDown /> : <FaChevronRight />}
+            </button>
+
+            {openQuestion === index && <p>{item.answer}</p>}
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }
 
-export default faqItems;
+export default FaqSection;

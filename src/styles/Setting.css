@@ -1,4 +1,5 @@
 /* Settings page base styles */
+/* Main width and spacing for the whole settings page */
 .settings-page {
   width: calc(100% - 96px);
   max-width: 1536px;
@@ -19,6 +20,7 @@
   background: linear-gradient(115deg, #111a1c, #071012 70%, #0d2428);
 }
 
+/* Small round user icon in the intro banner */
 .settings-intro-mark {
   display: grid;
   width: 76px;
@@ -31,10 +33,445 @@
   font-size: 30px;
 }
 
+/* Small label above the intro heading */
 .settings-eyebrow {
   margin: 0 0 8px;
   color: #20c8df;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 2px;
+}
+
+/* Main intro heading */
+.settings-intro h1 {
+  margin: 0 0 10px;
+  font-size: 34px;
+}
+
+/* Intro description text */
+.settings-intro p:last-child {
+  margin: 0;
+  color: #c5c5c5;
+  line-height: 1.5;
+}
+
+/* Shared dark panel look used by the account, FAQ, and support sections */
+.settings-panel {
+  margin-bottom: 32px;
+  padding: 30px;
+  border: 1px solid #222;
+  border-radius: 10px;
+  background: #111;
+}
+
+/* Width and spacing for the account panel */
+.settings-account-panel {
+  max-width: 960px;
+  margin: 0 auto 44px;
+  padding: 36px 42px;
+}
+
+/* Titles inside the settings panels */
+.settings-panel h2 {
+  margin: 0 0 18px;
+  text-align: center;
+  font-size: 22px;
+}
+
+/* Smaller section titles such as Membership, Security, and Devices */
+.settings-account-panel .settings-subheading {
+  margin: 30px 0 12px;
+  text-align: left;
+  font-size: 18px;
+}
+
+/* One row that shows a setting, its current value, and an action button */
+.settings-row {
+  display: grid;
+  min-height: 48px;
+  grid-template-columns: minmax(150px, 1fr) minmax(160px, 1.3fr) auto;
+  align-items: center;
+  gap: 14px;
+  padding: 7px 12px;
+  border: 1px solid #303030;
+  border-radius: 6px;
+  background: #191919;
+}
+
+/* Adds a little space between setting rows */
+.settings-row + .settings-row {
+  margin-top: 7px;
+}
+
+/* Aligns the icon and setting name */
+.settings-row-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+/* Cyan color for the small icons */
+.settings-row-icon {
+  color: #20c8df;
+}
+
+/* Current value or short explanation in each row */
+.settings-row-value {
+  color: #aaa;
+  font-size: 13px;
+}
+
+/* Small Edit, Manage, or Change buttons */
+.settings-small-button {
+  min-width: 76px;
+  padding: 7px 12px;
+  border: 1px solid #20c8df;
+  border-radius: 5px;
+  color: #20c8df;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+}
+
+/* Button colors when the mouse is over the button or keyboard focuses it */
+.settings-small-button:hover,
+.settings-small-button:focus-visible {
+  color: #001014;
+  background: #20c8df;
+}
+
+/* Cyan outline around the FAQ panel */
+.settings-faq {
+  border-color: #087c8c;
+}
+
+/* Two-column layout for FAQ questions on larger screens */
+.settings-faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+/* Background for each FAQ question and answer */
+.settings-faq-item {
+  align-self: start;
+  border-radius: 6px;
+  background: #123034;
+}
+
+/* Clickable question row */
+.settings-faq-item button {
+  display: flex;
+  width: 100%;
+  min-height: 48px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 16px;
+  border: 0;
+  color: #fff;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  font-size: 14px;
+}
+
+/* Arrow icon in each FAQ row */
+.settings-faq-item button svg {
+  flex: 0 0 auto;
+  color: #20c8df;
+  font-size: 12px;
+}
+
+/* Answer text shown after opening an FAQ question */
+.settings-faq-item p {
+  margin: 0;
+  padding: 0 16px 14px;
+  color: #c4d5d7;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Places the poster collage beside the contact form */
+.settings-support {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.75fr) minmax(0, 2fr);
+  align-items: center;
+  gap: 35px;
+  padding: 36px;
+  overflow: hidden;
+}
+
+/* Area that holds the movie poster collage */
+.settings-support-art {
+  position: relative;
+  display: grid;
+  width: 180px;
+  height: 220px;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-items: center;
+  margin: auto;
+  transform: translateY(-50px) rotate(-5deg);
+}
+
+/* Shared size and appearance for the TMDB posters in the collage */
+.support-art-card {
+  width: 82px;
+  height: 112px;
+  border: 2px solid #333333;
+  border-radius: 7px;
+  object-fit: cover;
+  box-shadow: 0 8px 18px #0009;
+}
+
+/* Slightly rotate each poster to create a loose stack effect */
+.support-art-card-1 {
+  transform: rotate(-7deg) translate(5px, 8px);
+}
+.support-art-card-2 {
+  transform: rotate(6deg) translate(-4px, 2px);
+}
+.support-art-card-3 {
+  transform: rotate(7deg) translate(8px, -5px);
+}
+.support-art-card-4 {
+  transform: rotate(-5deg) translate(-4px, -9px);
+}
+.support-art-card-5 {
+  transform: rotate(-9deg) translate(4px, -13px);
+}
+.support-art-card-6 {
+  transform: rotate(8deg) translate(-8px, -15px);
+}
+
+/* Aligns the Contact Support heading with its form */
+.settings-support-content h2 {
+  text-align: left;
+}
+
+/* Two-column layout for the support form fields */
+.settings-support-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+/* Labels above form inputs */
+.settings-support-form label > span {
+  display: block;
+  margin-bottom: 6px;
+  color: #c9c9c9;
+  font-size: 13px;
+}
+
+/* Shared style for text boxes, dropdowns, and the message field */
+.settings-support-form input:not([type="checkbox"]),
+.settings-support-form select,
+.settings-support-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 11px 12px;
+  border: 1px solid #28606a;
+  border-radius: 5px;
+  color: #fff;
+  background: #171b1c;
+  font: inherit;
+}
+
+/* Placeholder text inside the support form */
+.settings-support-form input::placeholder,
+.settings-support-form textarea::placeholder {
+  color: #858585;
+}
+
+/* Dark background for the topic dropdown options */
+.settings-support-form select option {
+  color: #fff;
+  background: #171b1c;
+}
+
+/* Lets the message field use the full form width */
+.settings-message-field {
+  grid-column: 1 / -1;
+}
+
+/* Lets the user resize the message box vertically */
+.settings-support-form textarea {
+  resize: vertical;
+}
+
+/* Lines up the agreement checkbox and its label */
+.settings-support-form .settings-consent {
+  display: flex;
+  grid-column: 1 / -1;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Cyan checkmark color */
+.settings-consent input {
+  accent-color: #20c8df;
+}
+
+/* Removes extra space around the agreement sentence */
+.settings-consent span {
+  margin: 0 !important;
+}
+
+/* Places the confirmation text next to the Send button */
+.settings-submit-line {
+  display: flex;
+  grid-column: 1 / -1;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Confirmation text after submitting the example form */
+.settings-submit-line p {
+  margin: 0;
+  color: #a7eaf3;
+  font-size: 13px;
+}
+
+/* Shared bright button style for the support form and trial banner */
+.settings-primary-button {
+  display: inline-block;
+  padding: 12px 24px;
+  border: 0;
+  border-radius: 6px;
+  color: #001014;
+  background: #20c8df;
+  cursor: pointer;
+  text-decoration: none;
+  font: inherit;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Background image area for the free-trial banner */
+.settings-trial-banner {
+  position: relative;
+  display: flex;
+  min-height: 260px;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 9px;
+  background-color: #123034;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Dark overlay on the banner so white text is easy to read */
+.settings-trial-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #050505ed, #0c363bd1 70%, #147d8c99);
+}
+
+/* Text and button placed over the trial banner image */
+.settings-trial-copy {
+  position: relative;
+  z-index: 1;
+  padding: 36px 42px;
+}
+
+/* Heading and description inside the trial banner */
+.settings-trial-copy h2 {
+  margin: 0 0 10px;
+  text-align: left;
+  font-size: 30px;
+}
+
+.settings-trial-copy p {
+  margin: 0 0 22px;
+  color: #e2e2e2;
+}
+
+/* Smaller-screen layout changes for phones and narrow browser windows */
+@media (max-width: 760px) {
+  .settings-page {
+    width: calc(100% - 36px);
+    padding-top: 36px;
+  }
+
+  .settings-intro {
+    min-height: 0;
+    align-items: flex-start;
+    margin-bottom: 28px;
+    padding: 24px;
+  }
+
+  .settings-intro-mark {
+    width: 54px;
+    height: 54px;
+    flex-basis: 54px;
+    font-size: 22px;
+  }
+
+  /* Adjust text and panel spacing for the smaller screen */
+  .settings-intro h1 {
+    font-size: 27px;
+  }
+
+  .settings-account-panel {
+    padding: 24px 18px;
+  }
+
+  /* Stack the setting value below its label and keep the button on the side */
+  .settings-row {
+    grid-template-columns: 1fr auto;
+  }
+
+  .settings-row-value {
+    grid-column: 1;
+    padding-left: 27px;
+  }
+
+  .settings-small-button {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+
+  /* Change the FAQ and support area to one column */
+  .settings-faq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .settings-support {
+    grid-template-columns: 1fr;
+    padding: 24px 18px;
+  }
+
+  .settings-support-art {
+    width: 150px;
+    height: 160px;
+  }
+
+  .support-art-card {
+    width: 65px;
+    height: 88px;
+  }
+
+  .settings-support-form {
+    grid-template-columns: 1fr;
+  }
+
+  .settings-message-field,
+  .settings-support-form .settings-consent,
+  .settings-submit-line {
+    grid-column: 1;
+  }
+  /* Reduce padding and text size in the trial banner */
+  .settings-trial-copy {
+    padding: 28px 24px;
+  }
+
+  .settings-trial-copy h2 {
+    font-size: 25px;
+  }
 }
