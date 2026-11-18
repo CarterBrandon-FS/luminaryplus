@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import SubscriptionIntro from "../components/SubscriptionIntro";
 import { getTrending } from "../utils/TMDB";
 import "../styles/Dashboard.css";
-import "../styles/Subscriptions.css";
+import "../styles/Subscription.css";
 
 // These prices and features are the plan information shown in your design.
 // They are subscription details, so they come from your app's plan design,

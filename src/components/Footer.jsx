@@ -15,6 +15,7 @@ function Footer() {
           <div className="footer-column">
             <h4>Home</h4>
             <p>Categories</p>
+            <p>Subscriptions</p>
             <p>Devices</p>
             <p>Pricing</p>
             <p>FAQ</p>
