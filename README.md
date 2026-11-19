@@ -52,6 +52,8 @@ Post your link here, so you have easy access to it.
 
 <br>
 
+-Project Link: https://github.com/CarterBrandon-FS/luminaryplus/tree/Carter_Brandon_Milestone2
+
 Please discuss the following:
 
 #### Page #1
@@ -82,13 +84,13 @@ If you are having trouble, contact your instructor ASAP, you might need to be pa
 
 ### Milestone 3
 
-⚙️ Overview - Write overview here.
+⚙️ Overview - This week I continued building the Luminary+ pages. I added the Settings page with separate components for the account panel, FAQ, support form, intro, and trial banner. I also worked on the Search and Subscription pages and started organizing the page styles and colors.
 <br>
-🌵 Challenges - Write challenges here.
+🌵 Challenges - I ran into import and export errors while splitting the Settings page into components. I learned to check whether a component was exported as a component function and to use the correct relative path when importing a component from the same folder.
 <br>
-🏆 Accomplishments - Write Accomplishments here.
+🏆 Accomplishments - I practiced breaking a page into smaller components, connecting pages through routes, and troubleshooting React errors using the browser console. I also started a global color guide for the app while keeping Roboto as the font.
 <br>
-🔮 Next Steps - Write your next steps here.
+🔮 Next Steps - plan to finish and test the TMDB search flow, add Local Storage for the watchlist, verify the links and buttons, and check the app for errors before the final milestone.
 
 <br>
 
@@ -96,28 +98,28 @@ Please discuss the following:
 
 #### API
 
-- Link to the API that is used in your code
-- Reason you chose the API
-- Where in your code did you use it?
+- **API:** [The Movie Database (TMDB) API](https://developer.themoviedb.org/docs)
+- **Why I chose it:** TMDB provides movie and TV data that fits the purpose of this app.
+- **Where I use it:** The API helper is in `src/utils/TMDB.jsx`. The pages use its functions to request trending, detail, search, and related title data.
 
 #### 1st Library
 
-- Link to the library
-- Link to library tutorial that you made already.
-- Reason you chose this library.
-- Where in your code is it used?
+- **Library:** [Axios](https://axios-http.com/)
+- **Why I chose it:** Axios makes it easier to send requests to TMDB and read the JSON response.
+- **Where I use it:** `src/utils/TMDB.jsx` creates the Axios client and defines the TMDB request functions.
+- **Tutorial from Exercise 01:** **Add the link to your completed tutorial here and confirm Axios is the library used in that tutorial.**
 
 #### 2nd Library
 
-- Link to the library
-- Reason you chose this library.
-- Where in your code is it used?
+- **Library:** [React Icons](https://react-icons.github.io/react-icons/)
+- **Why I chose it:** React Icons provides icons that I can use in the navigation and page controls.
+- **Where I use it:** React Icon components are imported in files such as `src/components/Header.jsx` and the Settings components.
 
 #### Persistent Data
 
-- Discuss if you have used MongoDB or Local Storage.
-- How was it used in your code?
-- Where in your code is it used?
+I plan to use browser Local Storage to save the user's watchlist so saved movies remain after a page refresh. **Status: update this section when the feature is implemented. If it is not completed by Milestone 3, explain that and state the plan to finish it by Milestone 4.**
+
+I am choosing Local Storage for this feature, so the app does not currently need a MongoDB database. I will make sure the project runs without NPM errors or warnings.
 
 <br>
 
@@ -163,6 +165,7 @@ Please discuss the following:
   - User/Settings
   - Search
   - Detail Page
+    -Subscription Page
 - Node/Express Backend
 - A Mongo DB Element OR Local Storage for persistent data
 - Connect to at least 1 free API

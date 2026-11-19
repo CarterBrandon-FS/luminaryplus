@@ -10,8 +10,8 @@ import {
   getKidsTv,
 } from "../utils/TMDB";
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+// import Header from "../components/Header";
+// import Footer from "../components/Footer";
 import HeroBanner from "../components/HeroBanner";
 import MovieRow from "../components/MovieRow";
 import TrilogyRow from "../components/TrilogyRow";
@@ -77,7 +77,8 @@ function Dashboard() {
       <div className="dashboard-content">
         {apiError && (
           <p className="api-message">
-            Some movies could not load. Check that VITE_TMDB_TOKEN is set in your .env file.
+            Some movies could not load. Check that VITE_TMDB_TOKEN is set in
+            your .env file.
           </p>
         )}
         <MovieRow title="Top 10 Movies" movies={topRated} limit={10} />
@@ -111,7 +112,11 @@ function Dashboard() {
         {/* Bottom Rows */}
         <MovieRow title="New Releases" movies={newReleases} limit={15} />
         <MovieRow title="Upcoming Movies" movies={upcoming} limit={15} />
-        <MovieRow title="Top 10 Adult TV Series" movies={adultTvShows} limit={10} />
+        <MovieRow
+          title="Top 10 Adult TV Series"
+          movies={adultTvShows}
+          limit={10}
+        />
         <MovieRow title="Kids TV Series" movies={kidsTv} limit={15} />
       </div>
 
