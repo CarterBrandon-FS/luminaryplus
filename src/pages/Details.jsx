@@ -8,8 +8,6 @@ import {
   getMovieImages,
   getSimilarMovies,
 } from "../utils/TMDB";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import MovieRow from "../components/MovieRow";
 import "../styles/Dashboard.css";
 import "../styles/Details.css";
@@ -143,7 +141,7 @@ function Details() {
 
   return (
     <div className="details-page">
-      <Header />
+      {/* <Header /> */}
 
       <section
         className="details-hero"
@@ -360,7 +358,7 @@ function Details() {
         </section>
       </main>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

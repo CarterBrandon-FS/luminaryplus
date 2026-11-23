@@ -6,12 +6,9 @@ function HeroBanner({ movies }) {
   const scrollRef = useRef(null);
   if (!movies || movies.length === 0) return null;
 
-  // The background image
   const mainMovie = movies[0];
-  // The posters in the slider
   const scrollMovies = movies.slice(0, 15);
 
-  //   Scroll effect
   const scrollLeft = () => {
     if (scrollRef.current) {
       scrollRef.current.scrollBy({ left: -300, behavior: "smooth" });
@@ -23,9 +20,14 @@ function HeroBanner({ movies }) {
     }
   };
 
+  // Helper to get the correct path
+  const getPath = (item) => {
+    const isTv = item.name && !item.title;
+    return isTv ? `/tv/${item.id}` : `/movie/${item.id}`;
+  };
+
   return (
     <div className="hero-container">
-      {/* 1. The Giant Background Image */}
       <div
         className="hero-background-img"
         style={{
@@ -34,16 +36,17 @@ function HeroBanner({ movies }) {
       >
         <div className="hero-gradient-overlay"></div>
 
-        {/* Optional: The main title text */}
         <div className="hero-text">
-          <h1>{mainMovie.title}</h1>
+          <h1>{mainMovie.title || mainMovie.name}</h1>
           <br />
           <p>{mainMovie.vote_average}/10</p>
-          <button className="btn-watch">Watch Now</button>
+          {/* Make the Watch Now button a link too! */}
+          <Link to={getPath(mainMovie)}>
+            <button className="btn-watch">Watch Now</button>
+          </Link>
         </div>
       </div>
 
-      {/* Add the arrow icons */}
       <button className="hero-arrow left" onClick={scrollLeft}>
         <FaChevronLeft />
       </button>
@@ -51,17 +54,16 @@ function HeroBanner({ movies }) {
         <FaChevronRight />
       </button>
 
-      {/* 2. The Scrolling Posters on top */}
       <div className="hero-scroll-row" ref={scrollRef}>
         {scrollMovies.map((movie) => (
           <Link
-            to={`/movie/${movie.id}`}
+            to={getPath(movie)} // <--- THIS IS THE FIX
             key={movie.id}
             className="hero-poster-card"
           >
             <img
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-              alt={movie.title}
+              alt={movie.title || movie.name}
             />
           </Link>
         ))}

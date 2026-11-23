@@ -1,10 +1,37 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 function TrilogyRow({ title, collections = [], loading = false }) {
   const [expandedId, setExpandedId] = useState(null);
   const scrollRef = useRef(null);
+  const contentWrapperRef = useRef(null);
+
+  // Close the expanded trilogy when the user clicks outside the poster
+  // scroll area, or presses Escape.
+  useEffect(() => {
+    if (expandedId === null) return;
+
+    function handleOutsideClick(event) {
+      if (
+        contentWrapperRef.current &&
+        !contentWrapperRef.current.contains(event.target)
+      ) {
+        setExpandedId(null);
+      }
+    }
+
+    function handleKeyDown(event) {
+      if (event.key === "Escape") setExpandedId(null);
+    }
+
+    document.addEventListener("mousedown", handleOutsideClick);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [expandedId]);
 
   function scrollRow(amount) {
     if (scrollRef.current) {
@@ -34,7 +61,16 @@ function TrilogyRow({ title, collections = [], loading = false }) {
             <FaChevronLeft />
           </button>
 
-          <div className="row-content trilogy-scroll" ref={scrollRef}>
+          <div
+            className="row-content trilogy-scroll"
+            ref={(node) => {
+              // One ref callback feeds both refs:
+              // scrollRef for the arrow scrollBy, contentWrapperRef for the
+              // outside-click detection.
+              scrollRef.current = node;
+              contentWrapperRef.current = node;
+            }}
+          >
             {collections.map((collection) => {
               const expanded = expandedId === collection.id;
               const movies = [...(collection.parts || [])].sort((a, b) =>
@@ -45,7 +81,10 @@ function TrilogyRow({ title, collections = [], loading = false }) {
                 <div
                   key={collection.id}
                   className={`trilogy-group ${expanded ? "expanded" : ""}`}
-                  onClick={() => setExpandedId(expanded ? null : collection.id)}
+                  onClick={(event) => {
+                    if (expanded && event.target.closest("a")) return;
+                    setExpandedId(expanded ? null : collection.id);
+                  }}
                 >
                   {movies.map((movie, index) => (
                     <Link

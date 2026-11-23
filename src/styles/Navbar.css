@@ -1,0 +1,203 @@
+/* --- Navbar --- */
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 16px 40px;
+  background-color: #050505;
+  gap: 24px;
+}
+
+.navbar-logo img {
+  height: 60px;
+  width: auto;
+  display: block;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 16px;
+  position: relative;
+}
+
+.navbar-menu-btn {
+  background-color: #00d2ff;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: inherit;
+}
+
+.dropdown-arrow {
+  font-size: 12px;
+}
+
+.navbar-menu-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+  z-index: 100;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.dropbox-item {
+  padding: 12px 16px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.dropbox-item:hover {
+  background-color: #333;
+}
+
+.search-form {
+  flex: 1;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  background-color: #1a1a1a;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin: 0 auto;
+  border: 1px solid #00d2ff;
+}
+
+.search-form input {
+  background: transparent;
+  border: none;
+  color: white;
+  width: 100%;
+  margin-left: 12px;
+  outline: none;
+  font-size: 18px;
+}
+
+.search-sub-btn {
+  appearance: none;
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.search-icon {
+  color: #fff;
+  font-size: 18px;
+}
+
+.mic-icon {
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.user-action {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.signup-btn,
+.login-btn {
+  padding: 6px 16px;
+  border-radius: 4px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.signup-btn {
+  background-color: transparent;
+  border: 1px solid #00d2ff;
+  color: white;
+}
+
+.login-btn {
+  background-color: #00d2ff;
+  color: #000;
+}
+
+.user-icon,
+.notification-icon,
+.settings-icon {
+  font-size: 20px;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* Wrapper positions the content inside the wrapper */
+
+.notif-wrapper {
+  position: relative;
+}
+
+/* The bell notification with no default styles */
+
+.notif-bell {
+  position: relative;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: var(--color-icons, #fff);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* The little dropdown that appears under the bell. */
+.notif-panel {
+  position: absolute;
+  top: calc(100% + 10px); /* sit just below the bell */
+  right: 0;
+  width: 280px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+  z-index: 200; /* stay above the page content */
+}
+
+/* Header strip inside the panel. */
+.notif-panel-header {
+  padding: 12px 14px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.notif-panel-header h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+/* The empty-state message. */
+.notif-empty {
+  margin: 0;
+  padding: 22px 14px;
+  color: #888;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* On small screens, flip the panel so it doesn't hang off the right edge. */
+@media (max-width: 640px) {
+  .notif-panel {
+    right: auto;
+    left: 0;
+  }
+}

@@ -1,0 +1,129 @@
+/* --- Footer --- */
+
+.site-footer {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  box-sizing: border-box;
+  background-color: #050505;
+  padding: 60px 60px 0;
+  border-top: 1px solid #1a1a1a;
+  position: relative;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 60px;
+}
+
+.footer-logo {
+  width: 280px;
+}
+
+.footer-logo .logo-img {
+  height: 60px;
+  width: auto;
+}
+
+.footer-links {
+  display: flex;
+  gap: 80px;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.footer-column h4 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #fff;
+}
+
+.footer-column p {
+  color: #888;
+  font-size: 14px;
+  margin: 12px 0;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.footer-column p:hover {
+  color: #00d2ff;
+}
+
+.social-icons {
+  display: flex;
+  gap: 16px;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.social-icons svg:hover {
+  color: #00d2ff;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #1a1a1a;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.footer-legal span {
+  margin-left: 24px;
+  cursor: pointer;
+}
+
+.footer-legal span:hover {
+  color: #fff;
+}
+
+/* Footer column links — same look the old <p> tags had. */
+.footer-column a {
+  display: block;
+  color: #888;
+  font-size: 14px;
+  margin: 12px 0;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-column a:hover {
+  color: #00d2ff;
+}
+
+/* Social icons are real links now but should still look like icons. */
+.social-icons a {
+  color: #fff;
+  transition: color 0.2s;
+}
+
+.social-icons a:hover {
+  color: #00d2ff;
+}
+
+.popcorn-border {
+  width: calc(100% + 120px);
+  margin-left: -60px;
+  margin-top: 20px;
+}
+
+.popcorn-border img {
+  width: 100%;
+  display: block;
+}
+
+.search-area .search-submit {
+  appearance: none;
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  color: #fff;
+  cursor: pointer;
+}

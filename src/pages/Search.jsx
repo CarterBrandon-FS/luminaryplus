@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { getMovieSearch, getMovieRecommendations } from "../utils/TMDB";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import "../styles/Dashboard.css";
 import "../styles/Search.css";
 
@@ -93,7 +91,7 @@ function Search() {
 
   return (
     <div className="search-page">
-      <Header />
+      {/* <Header /> */}
 
       <main className="search-content">
         {query && (
@@ -163,7 +161,7 @@ function Search() {
         </section>
       </main>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

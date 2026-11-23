@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import SubscriptionIntro from "../components/SubscriptionIntro";
 import { getTrending } from "../utils/TMDB";
 import "../styles/Dashboard.css";
@@ -87,7 +85,7 @@ function Subscription() {
 
   return (
     <div className="subscriptions-page">
-      <Header />
+      {/* <Header /> */}
 
       <main>
         <SubscriptionIntro />
@@ -256,7 +254,7 @@ function Subscription() {
         </section>
       </main>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

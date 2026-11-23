@@ -10,8 +10,6 @@ import {
   getKidsTv,
 } from "../utils/TMDB";
 
-// import Header from "../components/Header";
-// import Footer from "../components/Footer";
 import HeroBanner from "../components/HeroBanner";
 import MovieRow from "../components/MovieRow";
 import TrilogyRow from "../components/TrilogyRow";
@@ -36,6 +34,7 @@ function Dashboard() {
   const [kidsTv, setKidsTv] = useState([]);
   const [trilogies, setTrilogies] = useState([]);
   const [trilogiesLoading, setTrilogiesLoading] = useState(true);
+  // set error just in case it fails to laod
   const [apiError, setApiError] = useState(false);
 
   useEffect(() => {
@@ -70,7 +69,7 @@ function Dashboard() {
 
   return (
     <div className="dashboard-page">
-      <Header />
+      {/* <Header /> */}
 
       {trending.length > 0 && <HeroBanner movies={trending} />}
 
@@ -120,7 +119,7 @@ function Dashboard() {
         <MovieRow title="Kids TV Series" movies={kidsTv} limit={15} />
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
